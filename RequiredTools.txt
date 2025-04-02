@@ -1,0 +1,12 @@
+ Required Tools and Dependencies
+
+Tool	                                            Purpose	                                      Installation
+
+Python (≥3.6)	                      Required to run the script	                             Download Python
+pip 	                           Package manager for Python libraries	  Comes with Python (ensure it's updated: pip install --
+                                                                                                       upgrade pip)
+requests	       HTTP requests handling (used for scanning web pages)	         Installed via pip install requests
+beautifulsoup4	               Parses and extracts data from HTML pages  	         Installed via pip install beautifulsoup4
+python-nmap	               Interfaces with nmap for network scanning	         Installed via pip install python-nmap
+Flask	                   Creates a web dashboard to display scan results	         Installed via pip install flask
+Nmap	                               External network scanning tool	                 Install manually (see below)

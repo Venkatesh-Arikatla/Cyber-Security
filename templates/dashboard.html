@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerability Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .vulnerability { margin-bottom: 20px; padding: 15px; border-left: 5px solid; }
+        .critical { border-color: #ff0000; }
+        .high { border-color: #ff6600; }
+        .medium { border-color: #ffcc00; }
+        .low { border-color: #33cc33; }
+    </style>
+</head>
+<body>
+    <h1>Vulnerability Scan Results</h1>
+    {% for finding in findings %}
+    <div class="vulnerability {{ finding.severity|lower }}">
+        <h3>{{ finding.title }} ({{ finding.severity }})</h3>
+        <p><strong>Location:</strong> {{ finding.location }}</p>
+        <p><strong>Description:</strong> {{ finding.description }}</p>
+        <p><strong>Recommendation:</strong> {{ finding.recommendation }}</p>
+        <p><em>Found at: {{ finding.timestamp }}</em></p>
+    </div>
+    {% else %}
+    <p>No vulnerabilities found or scan not yet run.</p>
+    {% endfor %}
+</body>
+</html>
